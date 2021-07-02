@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>高德地图</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="./js/viewport/viewport.js"></script>
+</head>
+
+<body>
+    <div class="total">
+        <div class="title">帅里地图</div>
+        <div id="map" class="map"></div>
+        <div class="input-card">
+            <h4>设置地图当前行政区</h4>
+            <div class="input-item">
+                <input id='city-name' placeholder="兰州市" type="text" style="margin-right:1rem;">
+                <button class="btn" id="query">去指定城市</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.8&key=	e86bda5c4e1b37656e240c7880d5e19d">
+    </script>
+    <!-- <script>
+        //初始化地图插件
+        window.onload = function () {
+            var map = new AMap.Map('map');
+        }
+        var map = new AMap.Map('container', {
+            zoom: 10, //缩放级别
+            center: [116.397428, 39.90923], //地图显示中心点坐标，如果没有center属性，则会定位到你当前所处的位置
+            viewMode: '3D' //使用3D视图
+        });
+    </script> -->
+    <script>
+        var map = new AMap.Map('map', {
+            resizeEnable: true,
+            center: [103, 36] //所要定位的城市的经纬度
+        });
+
+        //根据cityname、adcode、citycode设置地图位置
+        function gotoCity() {
+            var val = document.querySelector('#city-name').value; //可以是cityname、adcode、citycode
+            if (!val) {
+                val = "兰州市";
+            }
+            map.setCity(val);
+            log.info(`已跳转至${val}`);
+        }
+
+        //绑定查询点击、回车事件
+        document.querySelector('#query').onclick = gotoCity;
+        document.querySelector('#city-name').onkeydown = function (e) {
+            if (e.keyCode === 13) {
+                gotoCity();
+                return false;
+            }
+            return true;
+        };
+    </script>
+</body>
+<script src="./js/amap.js"></script>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>帅里天气</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="weather.css">
+    <script src="./js/viewport/viewport.js"></script>
+</head>
+
+<body>
+    <div class="total">
+        <div class="title">
+            <span>帅里天气</span>
+        </div>
+        <div class="main" id="main">
+            <div class="search">
+                <input type="text" class="text" v-model="city" @keyup.enter="searchWeather" placeholder="请输入要查询天气的城市">
+                <input type="button" class="button" value="搜 索" @click="searchWeather">
+            </div>
+            <span class="address">
+                <a href="javaScript:;" @click="getWeather('北京')">北京</a>
+                <a href="javaScript:;" @click="getWeather('上海')">上海</a>
+                <a href="javaScript:;" @click="getWeather('广州')">广州</a>
+                <a href="javaScript:;" @click="getWeather('深圳')">深圳</a>
+            </span>
+            <ul class="weatherList">
+                <li v-for="(item, index) in weatherList" :key="index">
+                    <div class="info_type"><span class="iconfont">{{item.type}}</span></div>
+                    <div class="info_temp">
+                        <span>{{item.low}}</span>
+                        ~
+                        <span>{{item.high}}</span>
+                    </div>
+                    <div class="info_date">
+                        <span>{{item.date}}</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script src="./js/weather.js"></script>
+    <script src="./js/axios.js"></script>
+
+</body>
+<!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+
+</html>

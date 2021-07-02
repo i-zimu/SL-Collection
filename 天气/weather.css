@@ -1,0 +1,110 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: rgba(255, 255, 255, 1);
+}
+
+.total {
+    width: 36rem;
+    height: 20rem;
+    margin: 1.5rem auto;
+    background: rgba(166, 218, 240, 1);
+}
+
+.total .title {
+    height: 3rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: linear-gradient(to right, red, blue); */
+}
+
+.total .title span {
+    font-size: 1.25rem;
+    background: linear-gradient(to right, red, blue);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.total .main {
+    width: 30rem;
+    height: 15rem;
+    margin: 1rem auto 0;
+    background: linear-gradient(to right, green, yellow);
+}
+
+.total .main .search {
+    height: 3rem;
+    text-align: center;
+}
+
+.total .main .search .text {
+    width: 15rem;
+    font-size: 0.75rem;
+    border: 0;
+    padding: 0.25rem 1rem;
+    margin-top: 1.5rem;
+}
+
+.total .main .search .button {
+    width: 3.75rem;
+    height: 1.35rem;
+    font-size: 0.6rem;
+    color: #fff;
+    background: rgba(65, 161, 203, 1);
+    margin: 1.5rem 0 0 .25rem;
+}
+
+.total .main .address {
+    width: 7.5rem;
+    height: .75rem;
+    /* background: #fff; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 4rem;
+}
+
+.total .main .address a {
+    font-size: 0.45rem;
+    color: #000;
+    text-decoration: none;
+}
+.total .main .weatherList{
+    width: 25rem;
+    height: 9rem;
+    background: rgba(255, 255, 255, 0.2);
+    background: ;
+    list-style: none;
+    margin: 1rem auto 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.total .main .weatherList li{
+    width: 4.5rem;
+    height: 6.5rem;
+    text-align: center;
+    background: rgb(157, 248, 96);
+}
+.total .main .weatherList li .info_type{
+    color: rebeccapurple;
+    font-size: 0.75rem;
+    padding: .5rem 0 ;
+}
+.total .main .weatherList li .info_temp{
+    color: red;
+    font-size: 0.45rem;
+    padding: .5rem 0 ;
+
+}
+.total .main .weatherList li .info_date{
+    color: rebeccapurple;
+    font-size: 0.6rem;
+    padding: .5rem 0 ;
+
+}

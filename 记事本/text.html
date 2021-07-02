@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>帅里记事本</title>
+  <link rel="stylesheet" href="texxt.css">
+  <script src="./js/viewport/viewport.js"></script>
+</head>
+
+<body>
+  <div class="total">
+    <div class="header">
+      <span>帅里记事本</span>
+    </div>
+    <div>
+      <div class="main" id="main">
+        <div class="topic">
+          <div class="input">
+            <input type="text" v-model="inputValue" placeholder="请输入事项" @keyup.enter="add">
+          </div>
+          <ul class="list">
+            <li class="item" v-for="(item,index) in list">
+              <div class="view">
+                <span>
+                  <span class="index">{{ index+1 }}.</span>
+                  <label>{{ item }}</label></span>
+                <button class="destroy" @click="remove(index)"> <strong></strong></button>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="bottomBar">
+          <span>{{list.length}} items left</span>
+          <span class="btnClear" @click="ClearAll">Clear</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="./js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: "#main",
+    data: {
+      list: ["写代码", "吃饭饭", "睡觉觉"],
+      inputValue: ""
+    },
+    methods: {
+      add: function () {
+        if (this.inputValue == '') {
+          alert("不能为空哦")
+        } else {
+          this.list.push(this.inputValue);
+
+        }
+      },
+      remove: function (outspent) {
+        // console.log('删除');
+        // console.log('outspend');
+        this.list.splice(outspent, 1)
+      },
+      ClearAll: function (outspent) {
+        this.list.splice(outspent)
+      },
+
+    }
+  })
+</script>
+
+</html>
